@@ -1,0 +1,30 @@
+my_file = open("adventOfCodeD1.txt","r")
+
+# reading the file
+data = my_file.read()
+
+# replacing end splitting the text
+# when newline ('\n') is seen.
+lst = data.split("\n")
+my_file.close()
+
+
+#iterating through each list item
+nums = []
+for item in lst: #iterating through each character of each item
+  first_num = None
+  last_num = None
+  for letter in range(len(item)):
+    if item[letter].isdigit() == True and first_num==None: assigning the first and last digits to variables
+      first_num = item[letter]
+    else:
+      pass
+    if item[-letter].isdigit() == True and last_num ==None and letter>0:
+      last_num = item[-letter]
+    else:
+      pass
+  if last_num == None:
+      last_num = item[0]
+  nums.append(int(str(first_num)+str(last_num))) concatenating and appending results to output list
+
+sum(nums)
